@@ -1,0 +1,250 @@
+/* ---------------------
+   PALETA KOLORÓW
+----------------------*/
+
+:root {
+    --dark-blue: #0C2B4E;
+    --mid-blue: #1A3D64;
+    --teal: #1D546C;
+    --light: #F4F4F4;
+}
+
+/* ---------------------
+   GLOBALNE
+----------------------*/
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body { 
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: var(--light);
+    color: var(--dark-blue);
+}
+
+
+/* ---------------------
+   NAVBAR
+----------------------*/
+
+header {
+    background: var(--dark-blue);
+    padding: 15px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* ---------------------
+   HERO
+----------------------*/
+
+.hero {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--light);
+    text-shadow: 0 0 10px black;
+}
+
+/* ---------------------
+   TIMER
+----------------------*/
+
+.timer-section {
+    text-align: center;
+    padding: 15px 30px
+}
+
+#timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--mid-blue);
+    margin-top: 0px;
+}
+
+/* ---------------------
+   ABOUT
+----------------------*/
+
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    color: var(--dark-blue);
+}
+
+main {
+  background: url("https://www.royalarena.dk/sites/default/files/styles/event_banner/public/Tom%20Odell_1920x600_RA.png?itok=WBbFh0g3") center/cover no-repeat;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;  /* Wysokość co najmniej wysokość okna */
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+
+
+main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.4); /* przezroczystość */
+    backdrop-filter: blur(1px);            /* delikatne rozmycie */
+    z-index: 0;
+}
+
+main > * {
+    position: relative;
+    z-index: 1; /* treść nad półprzeźroczystym tłem */
+}
+
+main, main > * {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------------------
+   FORMULARZ
+----------------------*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;       /* wypełnia dostępne miejsce */
+    max-width: 450px;  /* nie wychodzi poza 450px */
+    margin: 150px auto 20px auto; /* wyśrodkowanie poziome */
+    gap: 10px;
+}
+
+input, textarea, select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--mid-blue);
+    border-radius: 4px;
+    background: white;
+    color: var(--dark-blue);
+}
+
+input[type="submit"] {
+    background: var(--teal);
+    color: var(--light);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background: var(--mid-blue);
+}
+
+
+/* ---------------------
+   GALERIA
+----------------------*/
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 250px;
+    height: auto;
+    border-radius: 4px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+
+.video-center {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0;
+    /* dodatkowo, aby nie rozciągać na całą szerokość */
+    width: 100%;
+}
+
+.video-center iframe {
+    display: block;        /* usuwa margines inline */
+    max-width: 100%;       /* zachowanie proporcji */
+    width: 400px;          /* szerokość iframe */
+    height:220px;         /* wysokość iframe */
+}
+
+
+
+/* ---------------------
+   FOOTER
+----------------------*/
+
+footer {
+    background: var(--mid-blue);
+    color: var(--light);
+    padding: 20px;
+    text-align: center;
+    margin-top: 0px;
+}
+
+/* TELEFON */
+@media (max-width: 700px) {
+    .hero {
+        height: 40vh;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .gallery img {
+        width: 100%; /* zdjęcia na całej szerokości */
+    }
+
+    .video-center iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    form {
+        width: 90%; /* formularz dopasowany do ekranu telefonu */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* TABLET */
+@media (min-width: 701px) and (max-width: 1024px) {
+    .gallery img {
+        width: 45%; /* 2 zdjęcia w rzędzie */
+    }
+
+    form {
+        width: 70%;
+    }
+}
+
+
